@@ -14439,7 +14439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67102fc73e7b6d42a8ed7f4b4596f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: -90
+  offset: 0
   projectile: {fileID: 2989573537422921564, guid: 79c75eed45a5d58438f1cbd99b948f9c,
     type: 3}
   shotEffect: {fileID: 0}
