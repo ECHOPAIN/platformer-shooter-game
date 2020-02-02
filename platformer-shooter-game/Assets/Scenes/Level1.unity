@@ -26505,6 +26505,11 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 473293853534320959, guid: f75dceeb90e69134e9aac9ae9b815b21,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f75dceeb90e69134e9aac9ae9b815b21, type: 3}
 --- !u!1 &1908926947
@@ -26909,6 +26914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325520298069826020, guid: dbc3b58c198a90f468185dd744afba8e,
+        type: 3}
+      propertyPath: m_JumpForce
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbc3b58c198a90f468185dd744afba8e, type: 3}
