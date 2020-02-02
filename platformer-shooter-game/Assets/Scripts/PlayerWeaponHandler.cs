@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class PlayerWeaponHandler : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class PlayerWeaponHandler : MonoBehaviour
             {
                 //Instantiate(shotEffect, shotPoint.position, Quaternion.identity);
                 //camAnim.SetTrigger("shake");
+                CameraShaker.Instance.ShakeOnce(5f,5f,0f,.1f);
                 Instantiate(projectile, shotPoint.position, transform.rotation);
                 timeBtwShots = startTimeBtwShots;
             }
