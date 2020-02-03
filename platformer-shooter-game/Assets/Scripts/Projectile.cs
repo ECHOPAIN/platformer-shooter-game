@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ public class Projectile : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
+                hitInfo.collider.GetComponent<Damage>().TakeDamage(damage);
             }
             DestroyProjectile();
         }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 473293853534320959}
   - component: {fileID: 473293853534320958}
   - component: {fileID: 473293853534320953}
-  - component: {fileID: 473293853534320956}
+  - component: {fileID: 2784967364139996916}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -90,7 +90,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.2480842}
   serializedVersion: 2
   m_Radius: 0.5805551
---- !u!114 &473293853534320956
+--- !u!114 &2784967364139996916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,14 +99,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 473293853534320955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b9b401a7e3b15241a48d6b7470dda1a, type: 3}
+  m_Script: {fileID: 11500000, guid: b9362a82caac56943a81ed9415baef87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   camAnim: {fileID: 0}
-  health: 10
-  deathEffect: {fileID: 2803606029305376752, guid: 2b48113608ce94c408ec25b5bcf790aa,
-    type: 3}
+  health: 0
+  deathEffect: {fileID: 0}
   explosion: {fileID: 0}
+  bodyParts: []
+  hurtColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &473293853821915090
 GameObject:
   m_ObjectHideFlags: 0
