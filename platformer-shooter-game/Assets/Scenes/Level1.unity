@@ -26092,6 +26092,7 @@ MonoBehaviour:
   target: {fileID: 1070036}
   speed: 140
   nextWaypointDistance: 3
+  timeBetweenJumps: 0.8
   controller: {fileID: 1303169811}
 --- !u!114 &1303169805
 MonoBehaviour:
@@ -26508,6 +26509,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 473293855166404218, guid: f75dceeb90e69134e9aac9ae9b815b21,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.88
+      objectReference: {fileID: 0}
     - target: {fileID: 473293854409138389, guid: f75dceeb90e69134e9aac9ae9b815b21,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -26523,6 +26529,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 473293854268408210, guid: f75dceeb90e69134e9aac9ae9b815b21,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.49
+      objectReference: {fileID: 0}
     - target: {fileID: 473293853821915088, guid: f75dceeb90e69134e9aac9ae9b815b21,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -26779,16 +26790,6 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 37e8b5a55a68fb24db3c19f4ef0cc11c, type: 2}
-    - target: {fileID: 473293855166404218, guid: f75dceeb90e69134e9aac9ae9b815b21,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 473293854268408210, guid: f75dceeb90e69134e9aac9ae9b815b21,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.49
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f75dceeb90e69134e9aac9ae9b815b21, type: 3}
 --- !u!1 &1871244880

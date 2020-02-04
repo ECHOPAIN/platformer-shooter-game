@@ -10,6 +10,7 @@ public class EnemyAi : MonoBehaviour
 
     public float speed = 40f;
     public float nextWaypointDistance = 3f;
+    public float timeBetweenJumps = 1f;
 
     public CharacterController2D controller;
 
@@ -23,6 +24,8 @@ public class EnemyAi : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+
+    float timeUntilNextJump = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -67,10 +70,11 @@ public class EnemyAi : MonoBehaviour
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 normalized = direction * speed * Time.deltaTime;
 
-
-        if (normalized.y > 0.8 )
+        timeUntilNextJump -= Time.deltaTime;
+        if (normalized.y > 0.8 && timeUntilNextJump <= 0)
         {
             jump = true;
+            timeUntilNextJump = timeBetweenJumps;
         }
 
         if(normalized.x > 0.5)
