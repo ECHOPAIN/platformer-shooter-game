@@ -3,19 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 
-public class Damage : MonoBehaviour
+public class HealthSystem : MonoBehaviour
 {
 
-    public Animator camAnim;
-    public int health;
+    //public Animator camAnim;
+    public int maxHealth;
     public GameObject deathEffect;
-    public GameObject explosion;
+    //public GameObject explosion;
     public SpriteRenderer[] bodyParts;
     public Color hurtColor;
 
+    public HealthBar healthBar;
+
+    public int currentHealth;
+    
+    void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+    
     private void Update()
     {
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             CameraShaker.Instance.ShakeOnce(15f, 0.1f, 0.5f, 1.5f);
@@ -27,8 +37,9 @@ public class Damage : MonoBehaviour
     {
         //camAnim.SetTrigger("shake");
         //Instantiate(explosion, transform.position, Quaternion.identity);
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
         StartCoroutine(Flash());
-        health -= damage;
     }
 
     IEnumerator Flash()
