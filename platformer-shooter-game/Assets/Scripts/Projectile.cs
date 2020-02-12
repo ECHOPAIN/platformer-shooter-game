@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, whatIsSolid);
         if (hitInfo.collider != null)
         {
-            if (hitInfo.collider.CompareTag("Enemy"))
+            if (hitInfo.collider.CompareTag("Player"))
             {
                 hitInfo.collider.GetComponent<HealthSystem>().TakeDamage(damage);
             }

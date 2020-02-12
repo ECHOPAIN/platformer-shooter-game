@@ -16,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.inputString == "\b")
+        {
+            GetComponent<HealthSystem>().TakeDamage(1000);
+        }
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 

@@ -12,37 +12,37 @@ public class HealthSystem : MonoBehaviour
     //public GameObject explosion;
     public SpriteRenderer[] bodyParts;
     public Color hurtColor;
-
     public HealthBar healthBar;
+    public Transform spawnPoint;
 
-    public int currentHealth;
-    
+    private int currentHealth;
+    private bool isDead;
+    public Behaviour[] disableOnDeath;
+    private bool[] wasEnabled;
+
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
-    
-    private void Update()
-    {
-        if (currentHealth <= 0)
-        {
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            CameraShaker.Instance.ShakeOnce(15f, 0.1f, 0.5f, 1.5f);
-            Destroy(gameObject);
-        }
+        Setup();
     }
 
     public void TakeDamage(int damage)
     {
-        //camAnim.SetTrigger("shake");
-        //Instantiate(explosion, transform.position, Quaternion.identity);
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-        StartCoroutine(Flash());
+        if (!isDead)
+        {
+            //camAnim.SetTrigger("shake");
+            //Instantiate(explosion, transform.position, Quaternion.identity);
+            currentHealth -= damage;
+            healthBar.SetHealth(currentHealth);
+            StartCoroutine(Flash());
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
     }
 
-    IEnumerator Flash()
+    private IEnumerator Flash()
     {
         for (int i = 0; i < bodyParts.Length; i++)
         {
@@ -52,6 +52,82 @@ public class HealthSystem : MonoBehaviour
         for (int i = 0; i < bodyParts.Length; i++)
         {
             bodyParts[i].color = Color.green;
+        }
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(3f);
+        SetDefaults();
+        transform.position = spawnPoint.position;
+    }
+
+
+    private void Die()
+    {
+        isDead = true;
+
+        //die annimation
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
+        CameraShaker.Instance.ShakeOnce(15f, 0.1f, 0.5f, 1.5f);
+        //Debug.Log("died");
+
+        //disable player component
+        for (int i = 0; i < disableOnDeath.Length; i++)
+        {
+            disableOnDeath[i].enabled = false;
+        }
+
+        CircleCollider2D[] _col = GetComponents<CircleCollider2D>();
+
+        for (int i = 0; i < _col.Length; i++)
+        {
+            if (_col != null)
+            {
+                _col[i].enabled = false;
+            }
+        }
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        //respawn
+        StartCoroutine(Respawn());
+
+        //Destroy(gameObject);
+    }
+
+    private void Setup()
+    {
+        wasEnabled = new bool[disableOnDeath.Length];
+        for (int i = 0; i < disableOnDeath.Length; i++)
+        {
+            wasEnabled[i] = disableOnDeath[i].enabled;
+        }
+
+
+        SetDefaults();
+    }
+
+    private void SetDefaults()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+        isDead = false;
+
+        for (int i = 0; i < disableOnDeath.Length; i++)
+        {
+            disableOnDeath[i].enabled = wasEnabled[i];
+        }
+
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        CircleCollider2D[] _col = GetComponents<CircleCollider2D>();
+        for (int i = 0; i < _col.Length; i++)
+        {
+            if(_col != null)
+                _col[i].enabled = true;
         }
     }
 }
