@@ -135,7 +135,7 @@ public class CharacterController2D : MonoBehaviour
 			//m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			m_Rigidbody2D.velocity = Vector2.up * m_JumpForce;
 		}
-		else if (jump && (jumpCpt < jumpAmout-1))
+		else if (jump && (jumpCpt < jumpAmout))
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;

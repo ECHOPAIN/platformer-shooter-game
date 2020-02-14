@@ -51,7 +51,7 @@ public class HealthSystem : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         for (int i = 0; i < bodyParts.Length; i++)
         {
-            bodyParts[i].color = Color.green;
+            bodyParts[i].color = Color.white;
         }
     }
 
@@ -93,8 +93,6 @@ public class HealthSystem : MonoBehaviour
 
         //respawn
         StartCoroutine(Respawn());
-
-        //Destroy(gameObject);
     }
 
     private void Setup()
