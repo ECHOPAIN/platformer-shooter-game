@@ -135,7 +135,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2420764667212351075}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.10000001, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 5507502709095936955}
   - component: {fileID: 5507502709095936952}
   m_Layer: 8
-  m_Name: Gun
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -699,9 +699,11 @@ MonoBehaviour:
   - {fileID: 3629280714573534575}
   - {fileID: 6677062690907495578}
   - {fileID: 5488018837263096986}
-  hurtColor: {r: 1, g: 0, b: 0, a: 0}
+  hideOnDeath: []
   healthBar: {fileID: 4903532145134393711}
   spawnPoint: {fileID: 0}
+  damagePopup: {fileID: 7177137058230143432, guid: 26d7bccf9faac2f488fe0acad06a999c,
+    type: 3}
   disableOnDeath:
   - {fileID: 5507502709939243051}
 --- !u!1 &5957221825687784452
@@ -904,6 +906,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5507502709939243050}
     m_Modifications:
+    - target: {fileID: 1804020349957652777, guid: 780f1ffc2d3c52d468a1b80c5c199566,
+        type: 3}
+      propertyPath: m_Name
+      value: HealthBarCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 1804020349957652781, guid: 780f1ffc2d3c52d468a1b80c5c199566,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1014,11 +1021,6 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 5916504122278661796}
-    - target: {fileID: 1804020349957652777, guid: 780f1ffc2d3c52d468a1b80c5c199566,
-        type: 3}
-      propertyPath: m_Name
-      value: HealthBarCanvas
-      objectReference: {fileID: 0}
     - target: {fileID: 1804020348967277938, guid: 780f1ffc2d3c52d468a1b80c5c199566,
         type: 3}
       propertyPath: m_AnchorMax.x

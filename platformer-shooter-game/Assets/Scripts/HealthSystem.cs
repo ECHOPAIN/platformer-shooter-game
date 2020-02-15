@@ -11,9 +11,11 @@ public class HealthSystem : MonoBehaviour
     public GameObject deathEffect;
     //public GameObject explosion;
     public SpriteRenderer[] bodyParts;
-    public Color hurtColor;
+    public SpriteRenderer[] hideOnDeath;
+    //public Color hurtColor;
     public HealthBar healthBar;
     public Transform spawnPoint;
+    public DamagePopup damagePopup;
 
     private int currentHealth;
     private bool isDead;
@@ -34,7 +36,7 @@ public class HealthSystem : MonoBehaviour
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
             StartCoroutine(Flash());
-
+            damagePopup.Create(transform.position, damage);
             if (currentHealth <= 0)
             {
                 Die();
@@ -46,7 +48,7 @@ public class HealthSystem : MonoBehaviour
     {
         for (int i = 0; i < bodyParts.Length; i++)
         {
-            bodyParts[i].color = hurtColor;
+            bodyParts[i].color = Color.red;
         }
         yield return new WaitForSeconds(0.05f);
         for (int i = 0; i < bodyParts.Length; i++)
@@ -91,6 +93,11 @@ public class HealthSystem : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
+        for (int i = 0; i < hideOnDeath.Length; i++)
+        {
+            hideOnDeath[i].enabled = false;
+        }
+
         //respawn
         StartCoroutine(Respawn());
     }
@@ -126,6 +133,16 @@ public class HealthSystem : MonoBehaviour
         {
             if(_col != null)
                 _col[i].enabled = true;
+        }
+
+        for (int i = 0; i < bodyParts.Length; i++)
+        {
+            bodyParts[i].color = Color.white;
+        }
+
+        for (int i = 0; i < hideOnDeath.Length; i++)
+        {
+            hideOnDeath[i].enabled = true;
         }
     }
 }

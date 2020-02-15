@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 7923406669841885127}
   - component: {fileID: 6855527819926749313}
   m_Layer: 0
-  m_Name: Gun_Projectile
+  m_Name: Pistol_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ MonoBehaviour:
   speed: 50
   lifeTime: 1.5
   distance: 0
-  damage: 1
+  damage: 10
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 4294967295

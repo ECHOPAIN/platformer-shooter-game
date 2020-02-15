@@ -27,7 +27,8 @@ public class PlayerWeaponHandler : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                //Instantiate(shotEffect, shotPoint.position, Quaternion.identity);
+                
+                //Destroy(Instantiate(shotEffect, shotPoint.position, shotPoint.rotation),0.1f);
                 //camAnim.SetTrigger("shake");
                 CameraShaker.Instance.ShakeOnce(1f,0.1f,0f,.1f);
                 Instantiate(projectile, shotPoint.position, transform.rotation);
