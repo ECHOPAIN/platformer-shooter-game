@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour
     public DamagePopup damagePopup;
 
     private int currentHealth;
-    private bool isDead;
+    public bool isDead;
     public Behaviour[] disableOnDeath;
     private bool[] wasEnabled;
 
@@ -71,7 +71,7 @@ public class HealthSystem : MonoBehaviour
 
         //die annimation
         Instantiate(deathEffect, transform.position, Quaternion.identity);
-        CameraShaker.Instance.ShakeOnce(15f, 0.1f, 0.5f, 1.5f);
+        //CameraShaker.Instance.ShakeOnce(15f, 0.1f, 0.5f, 1.5f);
         //Debug.Log("died");
 
         //disable player component

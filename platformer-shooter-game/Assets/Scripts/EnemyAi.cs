@@ -8,6 +8,7 @@ public class EnemyAi : MonoBehaviour
 
     public Transform target;
     public GameObject targetPlayer;
+    private GameObject oldTargetPlayer;
     public GameObject targetItem;
 
     public float speed = 40f;
@@ -58,14 +59,16 @@ public class EnemyAi : MonoBehaviour
     {
         //set targetPlayer to the closest enemy
         findTargetPlayer();
-        if (target == null)
+        if (target == null || oldTargetPlayer.GetComponent<HealthSystem>().isDead)
         {
+            oldTargetPlayer = targetPlayer;
             target = targetPlayer.transform;
         }
         else
         {
             if (Vector3.Distance(transform.position, target.position) > 10)
             {
+                oldTargetPlayer = targetPlayer;
                 target = targetPlayer.transform;
             }
         }
@@ -130,25 +133,30 @@ public class EnemyAi : MonoBehaviour
     private void findTargetPlayer()
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        GameObject nearestPlayer;
-        if (players[0] == gameObject)
+        int nearestPlayer = -1;
+
+        for (int i = 0; i < players.Length; i++)
         {
-            nearestPlayer = players[1];
-        }
-        else
-        {
-            nearestPlayer = players[0];
-        }
-        for (int i = 1; i < players.Length; i++)
-        {
-            if (players[i] != gameObject) {
-                if (Vector3.Distance(transform.position, players[i].transform.position) < Vector3.Distance(transform.position, nearestPlayer.transform.position))
+            if ((players[i] != gameObject) && (!players[i].GetComponent<HealthSystem>().isDead)) {
+                if (nearestPlayer == -1)
                 {
-                    nearestPlayer = players[i];
+                    nearestPlayer = i;
+                }
+                else if (Vector3.Distance(transform.position, players[i].transform.position) < Vector3.Distance(transform.position, players[nearestPlayer].transform.position))
+                {
+                    nearestPlayer = i;
                 }
             }
         }
-        
-        targetPlayer = nearestPlayer;
+
+
+        if (nearestPlayer == -1)
+        {
+            targetPlayer = null;
+        }
+        else
+        {
+            targetPlayer = players[nearestPlayer];
+        }
     }
 }

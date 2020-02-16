@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac423a4a388bede4e9dfd59f29ab0625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   deathEffect: {fileID: 8485316256674438700, guid: ab8c7215bb1c6634ba5e4cade8c2a9d2,
     type: 3}
   bodyParts:
