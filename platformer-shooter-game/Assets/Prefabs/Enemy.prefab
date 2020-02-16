@@ -247,6 +247,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 0}
   damagePopup: {fileID: 7177137058230143432, guid: 26d7bccf9faac2f488fe0acad06a999c,
     type: 3}
+  isDead: 0
   disableOnDeath:
   - {fileID: 106766365219026434}
   - {fileID: 1852694230744072859}
@@ -609,7 +610,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   enemyAi: {fileID: 106766365219026434}
-  startTimeBtwShots: 0.1
+  startTimeBtwShots: 0.5
 --- !u!1 &5682936689460805907
 GameObject:
   m_ObjectHideFlags: 0
