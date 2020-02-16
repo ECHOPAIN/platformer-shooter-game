@@ -61,7 +61,7 @@ public class HealthSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         SetDefaults();
-        transform.position = spawnPoint.position;
+        transform.position = GameManager.instance.GetNextSpawnPoint().position;
     }
 
 

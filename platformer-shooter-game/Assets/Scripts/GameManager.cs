@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool team;
     [SerializeField] Transform[] spawnPoints;
 
+    private int spawnPointsIterator = 0;
+
     public static GameManager instance;
 
 
@@ -29,24 +31,20 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        int spawnPointsIterator = 0;
         for (int i = 0; i < playerAmount; i++)
         {
+            Transform spawnPoint = GetNextSpawnPoint();
             if (i == 0)
             {
                 //spawn a humanPlayer
-                Instantiate(humanPlayer, spawnPoints[spawnPointsIterator].position, Quaternion.identity);
+                Instantiate(humanPlayer, spawnPoint.position, Quaternion.identity);
             }
             else
             {
                 //spawn a aiPlayer
-                Instantiate(aiPlayer, spawnPoints[spawnPointsIterator].position, Quaternion.identity);
+                Instantiate(aiPlayer, spawnPoint.position, Quaternion.identity);
             }
-            spawnPointsIterator++;
-            if(spawnPointsIterator  >= spawnPoints.Length)
-            {
-                spawnPointsIterator = 0;
-            }
+            
         }
     }
 
@@ -54,5 +52,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public Transform GetNextSpawnPoint()
+    {
+        Transform res = spawnPoints[spawnPointsIterator];
+        spawnPointsIterator++;
+        if (spawnPointsIterator >= spawnPoints.Length)
+        {
+            spawnPointsIterator = 0;
+        }
+        return res;
     }
 }

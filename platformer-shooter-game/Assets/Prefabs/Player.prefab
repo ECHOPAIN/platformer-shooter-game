@@ -869,13 +869,20 @@ MonoBehaviour:
   - {fileID: 3629280714573534575}
   - {fileID: 6677062690907495578}
   - {fileID: 5488018837263096986}
-  hideOnDeath: []
+  hideOnDeath:
+  - {fileID: 6688781992067328515}
+  - {fileID: 2415036302208909737}
+  - {fileID: 3629280714573534575}
+  - {fileID: 6677062690907495578}
+  - {fileID: 5488018837263096986}
+  - {fileID: 5507502709280556462}
   healthBar: {fileID: 4903532145134393711}
   spawnPoint: {fileID: 0}
   damagePopup: {fileID: 7177137058230143432, guid: 26d7bccf9faac2f488fe0acad06a999c,
     type: 3}
   disableOnDeath:
   - {fileID: 5507502709939243051}
+  - {fileID: 5507502709095936952}
 --- !u!1 &5957221825687784452
 GameObject:
   m_ObjectHideFlags: 0

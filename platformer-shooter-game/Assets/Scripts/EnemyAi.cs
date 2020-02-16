@@ -7,6 +7,8 @@ public class EnemyAi : MonoBehaviour
 {
 
     public Transform target;
+    public GameObject targetPlayer;
+    public GameObject targetItem;
 
     public float speed = 40f;
     public float nextWaypointDistance = 3f;
@@ -54,10 +56,37 @@ public class EnemyAi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //set targetPlayer to the closest enemy
+        findTargetPlayer();
+        if (target == null)
+        {
+            target = targetPlayer.transform;
+        }
+        else
+        {
+            if (Vector3.Distance(transform.position, target.position) > 10)
+            {
+                target = targetPlayer.transform;
+            }
+        }
+
+
         if (path == null)
             return;
 
-        if(currentWaypoint >= path.vectorPath.Count)
+        moveTowardTarget();
+    }
+
+
+    void FixedUpdate()
+    {
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        jump = false;
+    }
+
+    private void moveTowardTarget()
+    {
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
             return;
@@ -77,7 +106,7 @@ public class EnemyAi : MonoBehaviour
             timeUntilNextJump = timeBetweenJumps;
         }
 
-        if(normalized.x > 0.5)
+        if (normalized.x > 0.5)
         {
             horizontalMove = 1 * speed;
         }
@@ -90,19 +119,36 @@ public class EnemyAi : MonoBehaviour
             horizontalMove = 0;
         }
 
-
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
-        if(distance < nextWaypointDistance)
+        if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
         }
     }
 
-
-    void FixedUpdate()
+    private void findTargetPlayer()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
-        jump = false;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        GameObject nearestPlayer;
+        if (players[0] == gameObject)
+        {
+            nearestPlayer = players[1];
+        }
+        else
+        {
+            nearestPlayer = players[0];
+        }
+        for (int i = 1; i < players.Length; i++)
+        {
+            if (players[i] != gameObject) {
+                if (Vector3.Distance(transform.position, players[i].transform.position) < Vector3.Distance(transform.position, nearestPlayer.transform.position))
+                {
+                    nearestPlayer = players[i];
+                }
+            }
+        }
+        
+        targetPlayer = nearestPlayer;
     }
 }
