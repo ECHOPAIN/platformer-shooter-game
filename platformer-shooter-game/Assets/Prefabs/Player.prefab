@@ -741,6 +741,9 @@ MonoBehaviour:
     type: 3}
   shotPoint: {fileID: 5507502709098742301}
   camAnim: {fileID: 0}
+  infiniteAmo: 1
+  maxAmmo: 10
+  reloadTime: 1
   startTimeBtwShots: 0.5
 --- !u!1 &5507502709098742300
 GameObject:
@@ -1395,6 +1398,9 @@ MonoBehaviour:
     type: 3}
   shotPoint: {fileID: 1803643277672127559}
   camAnim: {fileID: 0}
+  infiniteAmo: 0
+  maxAmmo: 10
+  reloadTime: 1
   startTimeBtwShots: 0.1
 --- !u!1 &7438812754950926680
 GameObject:
