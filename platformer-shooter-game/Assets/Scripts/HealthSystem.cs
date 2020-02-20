@@ -14,7 +14,7 @@ public class HealthSystem : MonoBehaviour
     public SpriteRenderer[] hideOnDeath;
     //public Color hurtColor;
     public HealthBar healthBar;
-    public Transform spawnPoint;
+    //public Transform spawnPoint;
     public DamagePopup damagePopup;
 
     private int currentHealth;
