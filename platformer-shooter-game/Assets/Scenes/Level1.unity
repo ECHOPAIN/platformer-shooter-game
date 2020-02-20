@@ -20002,7 +20002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 25855165}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointE
   m_TagString: Respawn
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -20034,7 +20034,7 @@ GameObject:
   - component: {fileID: 174063203}
   - component: {fileID: 174063205}
   - component: {fileID: 174063204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tilemap_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25632,7 +25632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 229657110}
   - component: {fileID: 229657111}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Global Light 2D Far_Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25701,7 +25701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 388842827}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25734,7 +25734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 444740643}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointB
   m_TagString: Respawn
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -25764,7 +25764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 451264893}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointA
   m_TagString: Respawn
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -25794,7 +25794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 521186962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25829,7 +25829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635755623}
   - component: {fileID: 635755622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25873,7 +25873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 843823560}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointC
   m_TagString: Respawn
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -25903,7 +25903,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879472834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25940,7 +25940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1306307466}
   - component: {fileID: 1306307467}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Freeform Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26046,7 +26046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552102081}
   - component: {fileID: 1552102082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Global Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26201,7 +26201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1928074857}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointD
   m_TagString: Respawn
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -26231,7 +26231,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1951560195}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpawnPointF
   m_TagString: Respawn
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -26268,6 +26268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448597771689525279, guid: c6727fd7604ccb74899a9ef528f97201,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6448597771689525273, guid: c6727fd7604ccb74899a9ef528f97201,
         type: 3}
