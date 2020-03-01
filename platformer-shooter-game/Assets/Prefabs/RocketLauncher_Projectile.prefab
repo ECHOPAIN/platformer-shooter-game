@@ -80,7 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5329473812359657483}
   - component: {fileID: 5329473812359657561}
-  - component: {fileID: 5329473812359657862}
+  - component: {fileID: 6444837535364784758}
   m_Layer: 0
   m_Name: RocketLauncher_Projectile
   m_TagString: Untagged
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5329473812359657862
+--- !u!114 &6444837535364784758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,14 +161,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5329473812359657723}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62955762f04ec7b449bf87c2bf6d7b67, type: 3}
+  m_Script: {fileID: 11500000, guid: 7741d8d51832b89479b359a9bfa9f66c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
   lifeTime: 1.5
   distance: 0
   damage: 10
+  radius: 10
+  force: 700
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 4294967295
-  destroyEffect: {fileID: 0}
+  destroyEffect: {fileID: 8485316256674438700, guid: ab8c7215bb1c6634ba5e4cade8c2a9d2,
+    type: 3}
